@@ -298,12 +298,13 @@ function WalletTokens({ address, state }: { address: Address; state: CollectionS
         const batch: bigint[] = [];
         for (let i = start; i < end; i++) batch.push(i);
         const owners = await Promise.all(
-          batch.map((id) => publicClient.readContract({ address, abi, functionName: "ownerOf", args: [id] }).catch(() => null)),
+          batch.map((id) => publicClient.readContract({ address, abi, functionName: "ownerOf", args: [id] })),
         );
         owners.forEach((o, i) => {
           if (typeof o === "string" && o.toLowerCase() === wallet.toLowerCase()) ids.push(batch[i]);
         });
       }
+      if (BigInt(ids.length) !== held) throw new Error("Token ownership could not be reconciled with the wallet balance");
       return ids;
     },
   });
@@ -333,13 +334,18 @@ function WalletTokens({ address, state }: { address: Address; state: CollectionS
         </p>
       )}
       {tokens.isError && (
-        <p className="small muted">
-          Token ids could not be listed from the public RPC. The balance above is live;{" "}
-          <a href={explorerAddress(app.network, address)} target="_blank" rel="noreferrer">
-            view holdings on the explorer
-          </a>
-          .
-        </p>
+        <div className="stack-sm">
+          <p className="small muted" role="alert">
+            Token ids could not be listed from the public RPC. The balance above is live;{" "}
+            <a href={explorerAddress(app.network, address)} target="_blank" rel="noreferrer">
+              view holdings on the explorer
+            </a>
+            .
+          </p>
+          <button type="button" className="btn" disabled={tokens.isFetching} onClick={() => void tokens.refetch()}>
+            {tokens.isFetching ? "Retrying token list…" : "Retry token list"}
+          </button>
+        </div>
       )}
       {shown.length > 0 && (
         <ul className="tokens">

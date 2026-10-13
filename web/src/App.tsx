@@ -44,7 +44,10 @@ export function App() {
 
   return (
     <>
-      <a className="skip-link" href="#main">
+      <a className="skip-link" href="#main" onClick={(event) => {
+        event.preventDefault();
+        document.getElementById("main")?.focus();
+      }}>
         Skip to content
       </a>
       <header className="header">
@@ -56,7 +59,7 @@ export function App() {
           <WalletButton />
         </div>
       </header>
-      <main id="main" className="shell">
+      <main id="main" className="shell" tabIndex={-1}>
         {match ? (
           <CollectionPage address={match[1]} />
         ) : (

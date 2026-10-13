@@ -1,0 +1,9 @@
+{
+  "assets": 9,
+  "assetBytes": 623566,
+  "contracts": 3,
+  "pinnedAbiBytes": "identical",
+  "canonicalAbiHashes": "match",
+  "assetHashes": "match",
+  "handoffAndNetwork": "match"
+}

@@ -258,16 +258,19 @@ export function CollectionList({ refreshKey }: { refreshKey: number }) {
     query: { enabled: addrList.length > 0, refetchInterval: POLL_MS },
   });
 
-  const items: CollectionSummary[] = addrList.map((address, i) => {
+  const items: ((CollectionSummary & { status: "ready" }) | { address: Address; status: "loading" | "error" })[] = addrList.map((address, i) => {
     const r = details.data?.slice(i * 5, i * 5 + 5);
-    const get = <T,>(k: number, fallback: T): T => (r && r[k]?.status === "success" ? (r[k].result as T) : fallback);
+    if (details.isError) return { address, status: "error" };
+    if (!r) return { address, status: "loading" };
+    if (r.length !== 5 || r.some((read) => read.status !== "success")) return { address, status: "error" };
     return {
+      status: "ready",
       address,
-      name: get<string>(0, ""),
-      totalSupply: get<bigint>(1, 0n),
-      maxSupply: get<bigint>(2, 0n),
-      mintPrice: get<bigint>(3, 0n),
-      paused: get<boolean>(4, false),
+      name: r[0].result as string,
+      totalSupply: r[1].result as bigint,
+      maxSupply: r[2].result as bigint,
+      mintPrice: r[3].result as bigint,
+      paused: r[4].result as boolean,
     };
   });
 
@@ -297,16 +300,29 @@ export function CollectionList({ refreshKey }: { refreshKey: number }) {
           {items.map((c) => (
             <li key={c.address} className="item">
               <div className="stack-sm" style={{ gap: 2 }}>
-                <span className="title">{c.name || shortAddress(c.address)}</span>
-                <span className="caption num">
-                  {count(c.totalSupply)} / {count(c.maxSupply)} minted · {eth(c.mintPrice, app.network.nativeCurrency.symbol)} + fee
-                  {c.paused ? " · paused" : ""}
-                </span>
+                <span className="title">{c.status === "ready" && c.name ? c.name : shortAddress(c.address)}</span>
+                {c.status === "ready" ? (
+                  <span className="caption num">
+                    {count(c.totalSupply)} / {count(c.maxSupply)} minted · {eth(c.mintPrice, app.network.nativeCurrency.symbol)} + fee
+                    {c.paused ? " · paused" : ""}
+                  </span>
+                ) : (
+                  <span className={c.status === "error" ? "error-text" : "caption"} role={c.status === "error" ? "alert" : "status"}>
+                    {c.status === "error" ? "Collection details unavailable" : "Loading collection details…"}
+                  </span>
+                )}
                 <span className="caption mono">{shortAddress(c.address)}</span>
               </div>
-              <a className="btn small" href={`#/c/${c.address}`} aria-label={`Open ${c.name || shortAddress(c.address)}`}>
-                Mint
-              </a>
+              {c.status === "ready" && (
+                <a className="btn small" href={`#/c/${c.address}`} aria-label={`Open ${c.name || shortAddress(c.address)}`}>
+                  Mint
+                </a>
+              )}
+              {c.status === "error" && (
+                <button type="button" className="btn small" aria-label="Retry collection details" disabled={details.isFetching} onClick={() => void details.refetch()}>
+                  {details.isFetching ? "Retrying…" : "Retry"}
+                </button>
+              )}
             </li>
           ))}
         </ul>

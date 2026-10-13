@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-13",
+  "method": "Full-history Git bundle from an isolated scratch clone with the final source/export/evidence snapshot; includes .imd-responses.json. This size report itself was written after measurement.",
+  "gitBundleBytes": 920348,
+  "limitBytes": 8388608,
+  "snapshotFileBytes": 2579410,
+  "assetBytesExcludingManifest": 623566,
+  "assetCount": 9,
+  "scopeViolations": [],
+  "submittedDependencyOrCacheFiles": [],
+  "gitSubmodules": [],
+  "ignoreFilesChanged": false
+}

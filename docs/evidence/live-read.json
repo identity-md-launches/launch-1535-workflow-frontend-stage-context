@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-13T08:03:15.649Z",
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "httpStatus": 200,
+  "chainId": "0x1",
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0x307225e352b98198076df3c7ca2bd8dae2aa0b23",
+      "codeBytes": 1722
+    },
+    {
+      "name": "LoomCollection",
+      "address": "0x84286f3c9276807a36730701d417f2bbdb85732a",
+      "codeBytes": 11114
+    },
+    {
+      "name": "LoomFactory",
+      "address": "0x830c2349a83f2f53b9e7450d842d3272cd73e01a",
+      "codeBytes": 2618
+    }
+  ]
+}

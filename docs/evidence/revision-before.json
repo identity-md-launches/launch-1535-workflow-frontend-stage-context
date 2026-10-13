@@ -1,0 +1,23 @@
+[
+  {
+    "name": "chromium: first-screen and missing wallet",
+    "top": 879,
+    "bottom": 923,
+    "headingSize": "40px",
+    "alertCount": 0
+  },
+  {
+    "name": "chromium: skip link",
+    "hash": "#main",
+    "focus": "",
+    "heading": "Weave your collection."
+  },
+  {
+    "name": "chromium: unreadable collection",
+    "row": "0x1111…1111\n0 / 0 minted · 0 ETH + fee\n0x1111…1111\nMint"
+  },
+  {
+    "name": "chromium: failed token lookups",
+    "panel": "Your tokens\n2 held"
+  }
+]

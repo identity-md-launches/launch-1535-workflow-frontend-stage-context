@@ -1,0 +1,80 @@
+[
+  {
+    "name": "chromium: first-screen and missing wallet",
+    "top": 725.6875,
+    "bottom": 769.6875,
+    "headingSize": "28px",
+    "alertCount": 1
+  },
+  {
+    "name": "chromium: skip link",
+    "hash": "#/c/invalid",
+    "focus": "main",
+    "heading": "Collection not found"
+  },
+  {
+    "name": "chromium: unreadable collection",
+    "unavailable": "0x1111…1111\nCollection details unavailable\n0x1111…1111\nRetry",
+    "recovered": "Fixture collection\n7 / 10,000 minted · 0.01 ETH + fee\n0x1111…1111\nMint"
+  },
+  {
+    "name": "chromium: failed token lookups",
+    "failed": "Your tokens\n2 held\n\nToken ids could not be listed from the public RPC. The balance above is live; view holdings on the explorer.\n\nRetry token list",
+    "recovered": "Your tokens\n2 held\nWOVEN #1\nExplorer\nNot revealed\nWOVEN #2\nExplorer\nNot revealed"
+  },
+  {
+    "name": "chromium: pending details and one failed read",
+    "loading": "unknown amounts",
+    "partialFailure": "unavailable",
+    "retry": "complete details"
+  },
+  {
+    "name": "chromium: one owner lookup fails",
+    "result": "visible error; no incomplete token rows; retry enabled"
+  },
+  {
+    "name": "chromium: incomplete ownership count",
+    "result": "visible error; no incomplete token rows; retry enabled"
+  },
+  {
+    "name": "chromium: empty ownership count",
+    "result": "visible error; no incomplete token rows; retry enabled"
+  },
+  {
+    "name": "chromium: wallet rejection",
+    "error": "Transaction rejected in the wallet."
+  },
+  {
+    "name": "chromium: create fee, mint fee, chain switch and skip state",
+    "chainSwitch": "switch/add/switch with manifest parameters",
+    "simulatedAndRequestedCreateWei": "2000000000000000",
+    "simulatedAndRequestedMintWei": "21000000000000000",
+    "skipPreservedQuantity": "2",
+    "transactions": "mock wallet rejected both; nothing broadcast"
+  },
+  {
+    "name": "chromium: responsive stress",
+    "measurements": [
+      {
+        "width": 320,
+        "homeScroll": 320,
+        "collectionScroll": 320
+      },
+      {
+        "width": 390,
+        "homeScroll": 390,
+        "collectionScroll": 390
+      },
+      {
+        "width": 768,
+        "homeScroll": 768,
+        "collectionScroll": 768
+      },
+      {
+        "width": 1440,
+        "homeScroll": 1440,
+        "collectionScroll": 1440
+      }
+    ]
+  }
+]

@@ -135,6 +135,7 @@ code,
 }
 .num {
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 .muted {
   color: var(--color-text-secondary);
@@ -208,13 +209,14 @@ code,
 }
 
 main {
-  /* 40px below the sticky header keeps the wallet button clear of the page headline. */
-  padding-block: 40px var(--space-12);
+  /* Keep the complete create action on the first phone screen. */
+  padding-block: var(--space-6) var(--space-12);
   display: grid;
   gap: var(--space-6);
 }
 @media (min-width: 48rem) {
   main {
+    padding-block-start: 40px;
     gap: var(--space-8);
   }
 }

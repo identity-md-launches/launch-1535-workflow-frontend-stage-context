@@ -81,10 +81,16 @@ export function WalletButton() {
     if (!connector) return;
     setError(null);
     try {
+      if (!(await connector.getProvider())) {
+        setError("No browser wallet found. Install a wallet, then reload.");
+        setOpen(true);
+        return;
+      }
       await connectAsync({ connector });
       setOpen(false);
     } catch (e) {
       setError(describeError(e));
+      setOpen(true);
     }
   }
 
@@ -121,7 +127,7 @@ export function WalletButton() {
           <div className="menu" role="menu" aria-label="Wallets">
             {noWallet && (
               <p className="small muted" style={{ padding: 8 }}>
-                No browser wallet found. Install one, then reload this page.
+                No browser wallet found. Install a wallet, then reload.
               </p>
             )}
             {connectors.map((c) => (
