@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "launchId": "5722af3f-9e68-44ba-8cfc-01c459e9dce2",
+  "chainId": 1,
+  "sourceCommit": "b87c2f6836c814e57de644b42381787a6773e181",
+  "attestationHash": "eef7f1c751e9b938eddb7b9f093cb7d8dea574ada4823d049a8d5b289580c6f1",
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0x307225e352b98198076df3c7ca2bd8dae2aa0b23",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "abiPath": "abi/LaunchToken.json"
+    },
+    {
+      "name": "LoomCollection",
+      "address": "0x84286f3c9276807a36730701d417f2bbdb85732a",
+      "abiHash": "281da1b947e1d6d5ad3f80025bbed1d4d178f6e2bc49713d77f177d61c06eede",
+      "abiPath": "abi/LoomCollection.json"
+    },
+    {
+      "name": "LoomFactory",
+      "address": "0x830c2349a83f2f53b9e7450d842d3272cd73e01a",
+      "abiHash": "5402b4ac4652e1c892c1302d3ab16211f8e81b1c0df2c545f0b81692506cbc61",
+      "abiPath": "abi/LoomFactory.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "abi/LaunchToken.json",
+      "sha256": "9578fcb499b4ba5fac51462a67a2654d9f803e0ea3af9bdb19130ff695808542"
+    },
+    {
+      "path": "abi/LoomCollection.json",
+      "sha256": "d008c29bfb8f9dc438417eb8af79bc2cd7c1426c65c93a980114b2d0a9851685"
+    },
+    {
+      "path": "abi/LoomFactory.json",
+      "sha256": "8bdf75c2619f7a273fdadb5d433b4f4c55b42d0480f3203a2af5cb4f205414fc"
+    },
+    {
+      "path": "assets/ccip-BSoeEaQe.js",
+      "sha256": "9efc1231d84704603a03457f0cb0010583334be3355bf6a3731e58cb3c3ed898"
+    },
+    {
+      "path": "assets/index-CE3NxUy4.js",
+      "sha256": "df1a2a16f370a1e72388abdfdc64df8d6c0e321784cbceca2e2bc45d51d7eec5"
+    },
+    {
+      "path": "assets/index-DTQ_Nnm1.css",
+      "sha256": "f622ff3209fce6bb8ed59d9e636d09ca394b49157d64bc12b2529b2bfcf483e9"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "e417c847adae0ba16e3dbfa4f2d6298f2889763bb040369848cb53b06cb7f7e2"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4217c28e014c9fea24d9a25335b30fc7046f8f64ee594ace3b51d79ff9563331"
+    },
+    {
+      "path": "og.png",
+      "sha256": "492a6803322f022dc3689f6fa9d4235caf6c802608b8197dd552879284380943"
+    }
+  ],
+  "poolKey": {
+    "currency0": "0x307225e352b98198076df3c7ca2bd8dae2aa0b23",
+    "currency1": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000"
+  },
+  "network": {
+    "chainId": 1,
+    "name": "Ethereum",
+    "testnet": false,
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "explorer": "https://etherscan.io",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [],
+    "uniswapV4": {
+      "poolManager": "0x000000000004444c5dc75cb358380d2e3de08a90",
+      "universalRouter": "0x66a9893cc07d91d95644aedd05d03f95e1dba8af",
+      "quoter": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+      "stateView": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+      "positionManager": "0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    },
+    "pairToken": {
+      "address": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+      "symbol": "IMD",
+      "name": "Identity.md",
+      "decimals": 18
+    },
+    "otherPairTokens": [
+      {
+        "id": "fwa",
+        "address": "0xa0df17b5ac76ababa36e1450e2cbcd18a620c845",
+        "symbol": "FWA",
+        "name": "Fake World Assets",
+        "decimals": 18
+      }
+    ]
+  },
+  "walletAddChain": {
+    "chainId": "0x1",
+    "chainName": "Ethereum",
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://etherscan.io"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "loom-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Loom: create and mint NFT collections through the LoomFactory on Ethereum",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "vite build && node scripts/manifest.mjs",
+    "manifest": "node scripts/manifest.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.104.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "viem": "^2.57.5",
+    "wagmi": "^3.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}
